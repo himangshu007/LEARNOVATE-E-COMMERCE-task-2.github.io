@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+
+body{
+    height:500%;
+    width: 100%;
+    /* overflow:hidden ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 20%;
+    background: linear-gradient(#2196f3 , #e91e63);
+    color: #fff;
+}
+.bubbles{
+    position: absolute;
+    bottom: -700px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.bubbles span{
+    height: 60px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    animation: move 20s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes move {
+    100%{
+        transform: translateY(-190vh);
+    }
+}
+.bubbles span.one{
+    animation-delay: 3.2s;
+    transform: scale(2.15);
+}
+.bubbles span.two{
+    animation-delay: 4.5s;
+    transform: scale(1.5);
+}
+.bubbles span.three{
+    animation-delay: 1.2s;
+    transform: scale(0.35);
+}
+.bubbles span.four{
+    animation-delay: 7s;
+    transform: scale(2.15);
+}
+.bubbles span.five{
+    animation-delay: 8s;
+    transform: scale(0.5);
+}
+.bubbles span.six{
+    animation-delay: 5s;
+    transform: scale(2.5);
+}
+.bubbles span.seven{
+    animation-delay: 4s;
+    transform: scale(1.5);
+}
+.bubbles span::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 40%;
+    transform: skew(45deg) translateX(150px);
+    background: rgba(255, 255, 255, 0.15);
+    animation : mirror 10s linear infinite;
+}
+@keyframes mirror {
+    100%{
+        transform: translateX(-2000px);
+    }
+}
+.bubbles span.one::before{
+    animation-delay: 2.5s;
+}
+.bubbles span.two::before{
+    animation-delay: 4.5s;
+}
+.bubbles span.three::before{
+    animation-delay: 3.5s;
+}
+.bubbles span.four::before{
+    animation-delay: 8.5s;
+}
+.bubbles span.five::before{
+    animation-delay: 5.5s;
+}
+.bubbles span.six::before{
+    animation-delay: 1.5s;
+}
+.bubbles span.seven::before{
+    animation-delay: 7s;
+}
+
+
+.container{
+    width: 80%;
+    background: rgba(212, 111, 111, 0.1);
+    padding: 15px;
+    padding-left: 3%;
+    border-radius: 15px;
+    box-shadow:0 20px 50px rgba(0, 0, 0, 0.15) ;
+    backdrop-filter: blur(5px );
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    /* position: relative; */
+}
+.container h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 55px;
+}
+/* .container .row{
+    display: flex;
+    padding-left: 3%;
+    padding-bottom: 2%;
+} */
+.container .row::after {
+    content: "";
+    display: table;
+    clear: both;
+    padding-left: 3%;
+    padding-bottom: 2%
+}
+.container .col{
+    width: 33.33%;
+    float: left;
+    padding: 2%;
+}
+.container .buttonset{
+    padding-top: 5%;
+    padding-left: 15%;
+}
+.container .dropdownbtn {
+    background-color: dodgerblue;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.container .dropdownbtn:hover{
+    background-color: #9100f3;
+}
+.container .dropdown-content {
+    color:whitesmoke;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    background: rgba(71, 60, 60, 0.8);
+    backdrop-filter: blur(10px);
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 20px;
+    width: 33.333%;
+    text-shadow: 1px 1px 2px #000;
+  }
+  /* .container .buttonset:hover .dropdown-content {
+    display: block;
+  } */
+  .container img {
+    margin-bottom:2%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    float: left;
+    width: 80%;
+    object-fit: cover;
+    z-index: 10;
+    /* box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9); */
+}
+.close{
+    padding-top: 2%;
+}
+.btnclose{
+    background-color: dodgerblue;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    width:25%;
+    height: 10%;
+    text-shadow: none;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.btnclose:hover{
+    background-color: #9100f3;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .body{
+        padding-bottom: 12%;
+    }
+    .container .col{
+      width: 100%;
+      float:none;
+      justify-content: center;
+      align-items: center;
+      padding-left: 15%;
+    }
+    .container h1{
+        font-size: 30px;
+    }
+    .container .dropdownbtn{
+        padding: 10px;
+        min-width:100px;
+        border-radius: 10px;
+    }
+    .container .buttonset{
+        padding-left: 20%;
+    }
+    .container .close{
+        padding-left: 27%;
+    }
+    .btnclose{
+        width: 60%;
+    }
+}
